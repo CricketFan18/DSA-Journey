@@ -1,0 +1,7 @@
+*.sh
+*.out
+*.class
+*.exe
+.vscode/
+*.json
+OOPS/
