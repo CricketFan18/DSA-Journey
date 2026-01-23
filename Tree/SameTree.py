@@ -15,8 +15,8 @@ class Solution:
                 continue
             if not nodeA or not nodeB or nodeA.val != nodeB.val:
                 return False
-            queue.append([nodeA.left, nodeB.left])
-            queue.append([nodeB.right, nodeB.right])
+            queue.append((nodeA.left, nodeB.left))
+            queue.append((nodeB.right, nodeB.right))
         return True
     
     def isSameTree2(self, p, q) -> bool:
