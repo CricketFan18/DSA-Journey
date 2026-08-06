@@ -7,7 +7,7 @@ public class AgressiveCows {
         int lastPos = nums[0];
         System.out.printf("for mid  = %d\n", mid);
         for (int i = 1; i < nums.length; i++) {
-            if (lastPos + mid <= nums[i]) {
+            if (nums[i] - lastPos >= mid) {
                 cowsPlaced++;
                 lastPos = nums[i];
                 System.out.printf("Cow %d placed at %d\n", cowsPlaced, lastPos);
