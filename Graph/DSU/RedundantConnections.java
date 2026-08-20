@@ -3,16 +3,16 @@ public class RedundantConnections {
     public int[] parent;
     public int[] size;
 
-    private int find(int[] parent, int node) {
+    private int find(int node) {
         if (node == parent[node])
             return node;
 
-        return parent[node] = find(parent, parent[node]);
+        return parent[node] = find(parent[node]);
     }
 
-    private boolean union(int[] parent, int[] size, int u, int v) {
-        int rootU = find(parent, u);
-        int rootV = find(parent, v);
+    private boolean union(int u, int v) {
+        int rootU = find(u);
+        int rootV = find(v);
 
         if (rootU == rootV)
             return false;
@@ -41,7 +41,7 @@ public class RedundantConnections {
 
         for (int[] edge : edges) {
             int u = edge[0], v = edge[1];
-            if(!union(parent, size, u, v))
+            if(!union(u, v))
                 res = edge;
         }
         return res;

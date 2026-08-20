@@ -13,7 +13,7 @@ public class PalindromicSubarraySum {
         T[2 * n - 1] = -2;
         for (int i = 0; i < n; i++) {
             T[2 * i + 1] = -1;
-            T[2 * i + 1] = nums[i];
+            T[2 * i + 2] = nums[i];
         }
         int[] P = new int[T.length];
         int c = 0;

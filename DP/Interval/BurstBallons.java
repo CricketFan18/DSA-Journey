@@ -1,6 +1,5 @@
 public class BurstBallons {
     int solve(int left, int right, int[] paddedNums, Integer[][] memo) {
-        // Base case: No balloons strictly between left and right
         if (left + 1 == right) {
             return 0;
         }
