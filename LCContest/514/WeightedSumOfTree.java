@@ -1,7 +1,8 @@
-public class B {
+public class WeightedSumOfTree {
     public long weightedSum(int[] parent, int[] nums) {
         int n = parent.length;
         int[] depth = new int[n];
+        depth[0] = 1;
         int height = 1;
         for (int i = 0; i < n; i++) {
             height = Math.max(height, getDepth(i, parent, depth));

@@ -1,20 +1,23 @@
 import java.util.Arrays;
 
-public class A {
+public class MinTotalPriceAfterDiscounts {
     public double minPrice(int[] prices, int[] discounts) {
         Arrays.sort(prices);
         Arrays.sort(discounts);
         int n = discounts.length;
         int m = prices.length;
-        int i;
+        int i = n-1;
+        int j = m-1;
         double sum = 0.0d;
-        for (i = n - 1; i >= 0; i--) {
-            sum += ((double)prices[i] * (100 - discounts[i]))/100.0;
+        while(i>=0 && j>=0) {
+            sum += ((double)prices[j] * (100 - discounts[i]))/100.0;
+            i--;
+            j--;
         }
-        i = m - n;
-        while(i>=0)
+        while(j>=0)
         {
-            sum += prices[i];
+            sum += prices[j];
+            j--;
         }
         return sum;
     }
